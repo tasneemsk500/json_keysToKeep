@@ -1,0 +1,23 @@
+function filterObject(obj, keysToKeep) {
+    // Write your code here
+    //Copy the obj
+    const newObj = {...obj};
+
+    //Crea.te a new array with the keys from obj
+    const keys = Object.keys(obj);
+
+    //Compare for existence and delete if doesn't exist
+    for(const element of keys){
+        let count = 0;
+        for(const elementInside of keysToKeep){
+            if (element == elementInside){
+                count++;
+            }
+        }
+        if(count <= 0){
+            delete newObj[element];
+        }
+    }
+    return newObj;
+}
+// Do not modify code outside the function
